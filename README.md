@@ -1,1 +1,3 @@
-<iframe width="560" height="315" src="https://www.youtube.com/embed/vQPdaib7kX8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+## Lecture's video
+
+[<img src="https://www.vectorlogo.zone/logos/youtube/youtube-icon.svg"/>](https://youtu.be/vQPdaib7kX8)
