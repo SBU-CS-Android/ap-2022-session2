@@ -1,11 +1,13 @@
 package sbu.cs.ap.android.session1;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,12 +24,18 @@ public class MainActivity extends AppCompatActivity {
     calculateButton.setOnClickListener(new Button.OnClickListener() {
       @Override
       public void onClick(View view) {
-        int inputNumber = Integer.parseInt(inputField.getText().toString());
-        String isOddOrEven = isEven(inputNumber);
-        int factorial = factorial(inputNumber);
-        String resultText = String.format("duality: %s\n\n%d!: %d\n",isOddOrEven,
-                                          inputNumber,factorial);
-        resultTextView.setText(resultText);
+        String inputText = inputField.getText().toString();
+        if(inputText.isEmpty()) {
+          Toast.makeText(MainActivity.this,"Type in a number first!",
+                         Toast.LENGTH_SHORT).show();
+        } else {
+          int inputNumber = Integer.parseInt(inputText);
+          String isOddOrEven = isEven(inputNumber);
+          int factorial = factorial(inputNumber);
+          String resultText = String.format("duality: %s\n\n%d!: %d\n",isOddOrEven,
+                                            inputNumber,factorial);
+          resultTextView.setText(resultText);
+        }
       }
     });
   }
