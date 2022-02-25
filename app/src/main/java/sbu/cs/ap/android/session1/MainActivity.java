@@ -1,5 +1,6 @@
 package sbu.cs.ap.android.session1;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -22,12 +23,18 @@ public class MainActivity extends AppCompatActivity {
     calculateButton.setOnClickListener(new Button.OnClickListener() {
       @Override
       public void onClick(View view) {
-        int inputNumber = Integer.parseInt(inputField.getText().toString());
-        String isOddOrEven = isEven(inputNumber);
-        int factorial = factorial(inputNumber);
-        String resultText = String.format("duality: %s\n\n%d!: %d\n",isOddOrEven,
-                                          inputNumber,factorial);
-        resultTextView.setText(resultText);
+        String inputText = inputField.getText().toString();
+        if(inputText.isEmpty()) {
+          inputField.setHint("Type in a number first!");
+          inputField.setHintTextColor(Color.RED);
+        } else {
+          int inputNumber = Integer.parseInt(inputText);
+          String isOddOrEven = isEven(inputNumber);
+          int factorial = factorial(inputNumber);
+          String resultText = String.format("duality: %s\n\n%d!: %d\n",isOddOrEven,
+                                            inputNumber,factorial);
+          resultTextView.setText(resultText);
+        }
       }
     });
   }
