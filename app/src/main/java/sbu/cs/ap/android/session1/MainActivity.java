@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
       public void onClick(View view) {
         String inputText = inputField.getText().toString();
         if(inputText.isEmpty()) {
-          inputField.setHint("Type in a number first!");
-          inputField.setHintTextColor(Color.RED);
+          Toast.makeText(MainActivity.this,"Type in a number first!",
+                         Toast.LENGTH_SHORT).show();
         } else {
           int inputNumber = Integer.parseInt(inputText);
           String isOddOrEven = isEven(inputNumber);
